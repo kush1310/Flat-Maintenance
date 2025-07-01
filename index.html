@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finance | Shreeji Complex</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="login-container">
+      <h2>Admin Login</h2>
+      <form id="login-form">
+        <input type="text" id="username" placeholder="Username" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+        <p id="login-error" class="error-message"></p>
+      </form>
+    </div>
+
+    <div id="dashboard-container" style="display: none">
+      <header>
+        <h1>Shreeji Complex Financial System</h1>
+        <p id="typewriter" class="typewriter-text">
+          Designed and Developed By | Kush Shah
+        </p>
+        <nav class="main-nav">
+          <button id="dashboard-nav-btn">Maintenance Portal</button>
+          <button id="history-nav-btn">
+            Maintenance | Transaction History Portal
+          </button>
+          <button id="finance-nav-btn">Full Budget Portal</button>
+        </nav>
+        <button id="logout-button">Logout</button>
+      </header>
+
+      <main>
+        <section id="dashboard-section" class="active-section">
+          <div id="floor-navigation"></div>
+          <button id="back-to-all-flats-btn" style="display: none">
+            Back to Floors
+          </button>
+          <div id="flat-list"></div>
+        </section>
+
+        <section id="history-section" style="display: none">
+          <h2>Transaction History For Maintenance</h2>
+          <div class="search-bar">
+            <input
+              type="number"
+              id="flat-search-input"
+              placeholder="Search by Flat Number"
+            />
+            <button id="search-button">Search</button>
+            <button id="show-all-button">Show All</button>
+            <button id="generate-pdf-button">
+              Download PDF (Maintenance Pending)
+            </button>
+          </div>
+
+          <div id="payment-history-table-container">
+            <p class="no-results" style="display: block">
+              No Payments To Display.
+            </p>
+          </div>
+        </section>
+
+        <section id="finance-section" style="display: none">
+          <h2>Shreeji Commplex | Budget</h2>
+          <div class="budget-summary">
+            <h3>Total Funds: <span id="total-funds">₹ 0.00</span></h3>
+          </div>
+
+          <div class="budget-actions">
+            <div class="action-card">
+              <h4>Add Amount</h4>
+              <input
+                type="number"
+                id="add-fund-amount"
+                placeholder="Amount (₹)"
+                min="0"
+              />
+              <input type="date" id="add-fund-date" />
+              <textarea
+                id="add-fund-reason"
+                placeholder="Reason for addition"
+              ></textarea>
+              <button id="add-fund-btn">Add Amount</button>
+            </div>
+
+            <div class="action-card">
+              <h4>Deduct Amount</h4>
+              <input
+                type="number"
+                id="deduct-fund-amount"
+                placeholder="Amount (₹)"
+                min="0"
+              />
+              <input type="date" id="deduct-fund-date" />
+              <textarea
+                id="deduct-fund-reason"
+                placeholder="Reason for deduction"
+              ></textarea>
+              <button id="deduct-fund-btn">Deduct Amount</button>
+            </div>
+          </div>
+
+          <h3>Full Transaction History</h3>
+          <div class="search-bar">
+            <button id="generate-budget-pdf-button">
+              Download PDF (Transaction History)
+            </button>
+            <button id="overall-profit-loss-pdf-btn">
+              Download PDF (Profit/Loss Report)
+            </button>
+          </div>
+          <div id="budget-history-table-container">
+            <p class="no-results" style="display: block">
+              No Transactions To Dsisplay.
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="custom-alert-container">
+      <div id="custom-alert-box" class="alert-neutral">
+        <p id="custom-alert-message"></p>
+        <button id="custom-alert-close-btn">Continue</button>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
