@@ -1,5 +1,6 @@
+<div align="center">
 <h1>Flat Maintenance System</h1>
-A modern, browser-based **maintenance tracking system** designed for residential societies and apartment communities — developed using `HTML`, `CSS`, and `JavaScript`.
+A modern, browser-based maintenance tracking system designed for residential societies and apartment communities — developed using `HTML`, `CSS`, and `JavaScript`.
 
 ---
 
